@@ -56,14 +56,11 @@ function Caixa() {
     }
     function saldoFinal (){
 
-        
-
         console.log(`Saldo na conta : R$ ${saldoDaConta}`);
-        
         
     }
 
-    // Fluxo original substituído por um menu com loop do...while mantendo as estruturas das funções
+    // Menu simples usando do...while e if/else sem usar switch
     let opcao;
 
     do {
@@ -75,22 +72,18 @@ function Caixa() {
 
         opcao = prompt('Escolha uma opção: ');
 
-        switch (opcao) {
-            case '1':
-                mostrarSaldo();
-                break;
-            case '2':
-                Saque();
-                break;
-            case '3':
-                Deposito();
-                break;
-            case '0':
-                console.log('Saindo...');
-                break;
-            default:
-                console.log('Opção inválida. Tente novamente.');
+        if (opcao === '1') {
+            mostrarSaldo();
+        } else if (opcao === '2') {
+            Saque();
+        } else if (opcao === '3') {
+            Deposito();
+        } else if (opcao === '0') {
+            console.log('Saindo...');
+        } else {
+            console.log('Opção inválida. Tente novamente.');
         }
+
     } while (opcao !== '0');
 
     saldoFinal();
