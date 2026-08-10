@@ -60,7 +60,7 @@ function Caixa() {
         
     }
 
-    // Menu simples usando do...while e if/else sem usar switch
+    
     let opcao;
 
     do {
