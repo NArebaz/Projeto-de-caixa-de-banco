@@ -1,4 +1,4 @@
-    function Caixa() {
+function Caixa() {
 
     const prompt = require("prompt-sync")();
 
@@ -63,9 +63,36 @@
         
     }
 
-    mostrarSaldo();
-    Saque();
-    Deposito();
+    // Fluxo original substituído por um menu com loop do...while mantendo as estruturas das funções
+    let opcao;
+
+    do {
+        console.log('\n=== Caixa Eletrônico ===');
+        console.log('1 - Mostrar saldo');
+        console.log('2 - Sacar');
+        console.log('3 - Depositar');
+        console.log('0 - Sair');
+
+        opcao = prompt('Escolha uma opção: ');
+
+        switch (opcao) {
+            case '1':
+                mostrarSaldo();
+                break;
+            case '2':
+                Saque();
+                break;
+            case '3':
+                Deposito();
+                break;
+            case '0':
+                console.log('Saindo...');
+                break;
+            default:
+                console.log('Opção inválida. Tente novamente.');
+        }
+    } while (opcao !== '0');
+
     saldoFinal();
 }
 
